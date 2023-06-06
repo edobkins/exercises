@@ -35,6 +35,7 @@ header {
 	background-image: linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 }
 
+
 header h2 {
 	font-size: 175%;
 	color: #800000;
@@ -55,23 +56,12 @@ header img {
 }
 
 /* the styles for the main content */
-main {
-	clear: left;
-}
 
-main {
-	padding: 0;
-}
-aside {
-	padding-left: 20px
-	padding-bottom: 20px;
-}
-
-main h1 {
+h1{
 	font-size: 150%;
-	padding: .3em 0;
-	border-top: 3px solid #931420;
-	border-bottom: 3px solid #931420;
+	padding-top: .5em;
+	padding-bottom: .25em;
+	margin: 0;
 }
 
 main h2 {
@@ -124,6 +114,14 @@ article h3 {
 
 /* the styles for the aside */
 
+aside {
+	width: 215px;
+	float: right;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+
 aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
@@ -135,6 +133,7 @@ aside img {
 
 /* the styles for the footer */
 footer {
+	clear: both;
 	background-color: #931420;
 }
 
@@ -142,4 +141,13 @@ footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+section {
+	width: 525px;
+	float: right;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+
 }

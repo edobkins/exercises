@@ -19,32 +19,29 @@ body {
 	background-color: #fffded;
 	display: grid;
 	grid-template-rows: repeat(4, auto);
-	grid-template-columns: 1fr;
-	gap: o;
+	grid-template-columns: 100%;
 	grid-template-areas:
-		"head"
-		"nav1"
+		"header"
+		"nav_menu"
 		"main"
 		"footer";
 }
 
-a:focus,
-a:hover {
+a:focus, a:hover {
 	font-style: italic;
 }
 
 /* the styles for the header */
 header {
+	grid-area: header;
 	padding: 1.5em 0 2em 0;
 	border-bottom: 3px solid #931420;
 	background-image: -moz-linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: -webkit-linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: -o-linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: linear-gradient(30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-
-	header {
-		grid-area: head;
-	}
+    padding-bottom: 3%;
+    padding-top: 3%;
 }
 
 header h2 {
@@ -66,19 +63,26 @@ header img {
 	text-shadow: 2px 2px 2px #800000;
 }
 
-/* the styles for the navigation menu */
-nav {
-	grid-area: navi;
+main {
+	grid-area: main;
+	display: grid;
+	grid-template-columns: 30% 67.5%;
+	column-gap: 2.5%;
+	grid-template-areas: "aside section";
 }
 
+
+/* the styles for the navigation menu */
+
 #nav_menu ul {
+	grid-area: "nav_menu";
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: grid;
 	grid-template-rows: auto;
-	grid-row: repeat (5, 1fr);
-	align-items: center;
+	grid-template-columns: repeat (5, 20%);
+	grid-template-areas:"nav_items" ;
 }
 
 #nav_menu ul li a {
@@ -89,6 +93,7 @@ nav {
 	background-color: #800000;
 	color: white;
 	font-weight: bold;
+	grid-area: "nav_items"
 }
 
 #nav_menu a.current {
@@ -96,16 +101,11 @@ nav {
 }
 
 /* the styles for the section */
-main {
-	grid-area: main;
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: 30% 1fr;
-	column-gap: 2.5%;
-}
-
 section {
-	padding: 0 2.5% 20px 2.5%;
+	padding: 0% 3% 3% 0%;
+	grid-column: 2/3;
+	grid-row: 1/2;
+	grid-area: section;
 }
 
 section h1 {
@@ -119,6 +119,9 @@ section h2 {
 	font-size: 130%;
 	padding: .5em 0 .25em 0;
 }
+
+/*Table Styles*/
+
 
 section p {
 	padding-bottom: .5em;
@@ -164,9 +167,10 @@ article img {
 
 /* the styles for the aside */
 aside {
-	padding-left: 10%;
-	grid-row: 1 / 2;
-	grid-column: 2 / 3;
+	padding-left: 0 3%;
+	grid-row: 1/2;
+	grid-column: 1/2;
+	grid-area: aside;
 }
 
 aside h2 {
@@ -187,7 +191,7 @@ aside img {
 /* the styles for the footer */
 footer {
 	background-color: #931420;
-	grid-area: foot;
+	grid-area: footer;
 }
 
 footer p {
@@ -205,8 +209,7 @@ footer p {
 		font-size: 125%
 	}
 
-	section h2,
-	aside h2 {
+	section h2, aside h2 {
 		font-size: 110%;
 	}
 
@@ -221,11 +224,13 @@ footer p {
 	}
 
 	header {
+		padding-top: 3%;
+		padding-bottom: 3%;
 		text-align: center;
 		display: grid;
 		grid-template-rows: repeat(3, auto);
-		grid-template-columns: 1fr;
-		grid*GAP* EDIT: ;
+		grid-template-columns: auto;
+		grid-gap: .5em ;
 	}
 
 	section {
@@ -233,11 +238,19 @@ footer p {
 		width: 95%;
 		grid-row: 1 / 2;
 		grid-column: 1 / 2;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+	main {
+		display: grid;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 100%;
 	}
 
 	aside {
 		float: none;
 		padding-right: 2.5%;
+		padding-left: 2.5%;
 		width: 95%;
 		grid-row: 2 / 3;
 		grid-column: 1 / 2;
@@ -262,10 +275,11 @@ footer p {
 	.slicknav_menu {
 		background-color: #800000 !important;
 	}
-}
+
 
 @media only screen and (max-width: 414px) {
 	body {
 		font-size: 90%;
 	}
+ }
 }
