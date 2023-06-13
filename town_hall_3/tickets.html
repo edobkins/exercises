@@ -35,7 +35,7 @@
 			<h1>Order Form</h1>
 			<form action="register_account.html" method="get" name="registration_form" id="registration_form">
 				<fieldset>
-					<legend>Ordering Information</legend>
+					<legend>Member Information</legend>
 					<label for="email">E-Mail:</label>
 					<input type="email" name="email" id="email" autofocus required><br>
 					<label for="first_name">First Name:</label>
@@ -57,7 +57,7 @@
 						pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must be 999-999-999 format"><br>
 				</fieldset>
 				<fieldset>
-					<legend>Membership Information</legend>
+					<legend>Ordering Information</legend>
 					<label for="membership_type">Order Type:</label>
 					<select name="membership_type" id="membership_type">
 						<option value="member">Member Package</option>
@@ -65,17 +65,54 @@
 						<option value="single">Single Ticket</option>
 					</select><br>
 					<label for="tickets">Number of Tickets:</label>
-					<input type="text" name="tickets" id="tickets" placeholder="Number of Single Tickets"><br>
+					<input type="text" name="tickets" id="tickets" placeholder="Number of single tickets"><br>
+				</fieldset>
+				<fieldset id="payment-method">
+					<legend>Payment Method</legend>
+					<input type="radio" name="payment method" id="method1" value="" checked>
+					<label for="method1">Bill Me</label>
+					<input type="radio" name="payment method" id="method2" value="">
+					<label for="method2">Credit Card</label>
 				</fieldset>
 				<fieldset>
-					<legend>Payment Method</legend>
-					<input type="radio" name="payment-method" id="method1" value="thin" checked> 
-					<label for="crust1">Thin Crust</label><br> <input type="radio" name="crust" id="crust2" value="deep"> <label
-						for="crust2">Deep Dish</label><br>
+					<legend>Cedit Card Information</legend>
+					<label for="membership_type">Card Type:</label>
+					<select name="membership_type" id="membership_type">
+						<option value="visa">Visa</option>
+						<option value="discover">Discover</option>
+						<option value="mastercard">Mastercard</option>
+					</select>
+					<label for="cc-num">Card Number:</label>
+					<input type="text" name="phone" id="phone" placeholder="9999-9999-9999" pattern="\d{16}"
+						title="Credit card number is 16 digits">
+
+					<label for="exp-month">Experation Date:</label>
+					<select name="exp-month" id="exp-month">
+						<option value="jan">jan</option>
+						<option value="feb">feb</option>
+						<option value="mar">mar</option>
+						<option value="april">april</option>
+						<option value="may">may</option>
+						<option value="june">june</option>
+						<option value="july">july</option>
+						<option value="august">august</option>
+						<option value="september">september</option>
+						<option value="october">october</option>
+						<option value="november">november</option>
+						<option value="december">december</option>
+					</select>
+					<select name="exp-year" id="exp-year">
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+					</select>
+
 
 				</fieldset>
 				<fieldset id="buttons">
-					<legend>Submit Your Membership</legend>
+					<legend>Submit Your Order</legend>
 					<label>&nbsp;</label>
 					<input type="submit" id="submit" value="Submit">
 					<input type="reset" id="reset" value="Reset Fields"><br>
